@@ -1,13 +1,8 @@
 # Node dependencies
-/node_modules/
-**/node_modules/
+node_modules/
 .pnp/
 .pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+.yarn/
 
 # Package manager lock files
 package-lock.json
@@ -15,8 +10,8 @@ yarn.lock
 pnpm-lock.yaml
 
 # Build output
-/.next/
-**/.next/
+# This now specifically targets the .next folder inside the frontend directory
+frontend/.next/
 out/
 build/
 dist/
@@ -44,14 +39,14 @@ build-archive.log
 
 # Vercel
 .vercel/
-.vercel
 
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
 
 # Database
-*.db
+# This now specifically targets the local.db folder inside the frontend directory
+frontend/local.db/
 
 # Storybook
 storybook-static
@@ -69,9 +64,6 @@ venv/
 __pycache__/
 *.py[cod]
 
-# Local folders
-local/
-
 # IDE/editor
 .vscode/
 .idea/
@@ -84,3 +76,7 @@ Thumbs.db
 ehthumbs.db
 Icon?
 *.pem
+
+# Specific files you don't want to commit
+# For example, the postmaster.pid file inside local.db
+frontend/local.db/postmaster.pid
